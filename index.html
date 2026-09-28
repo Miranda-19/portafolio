@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Portafolio | Estudiante de Sistemas Informáticos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- ========== HEADER ========== -->
+    <header>
+        <div class="container">
+            <a href="#inicio" class="logo">Mi Portafolio</a>
+            
+            <nav class="nav" id="nav">
+                <a href="#inicio">Inicio</a>
+                <a href="#habilidades">Habilidades</a>
+                <a href="#proyectos">Proyectos</a>
+                <a href="#contacto">Contacto</a>
+            </nav>
+
+            <button class="btn-modo" id="btnModo" title="Cambiar modo">🌙</button>
+            <button class="menu-btn" id="menuBtn">☰</button>
+        </div>
+    </header>
+
+    <!-- ========== INICIO ========== -->
+    <section id="inicio" class="inicio">
+        <div class="container">
+            <div class="inicio-contenido">
+                <img src="img/perfil.jpeg" alt="Mi foto" class="foto-perfil" onerror="this.src='https://via.placeholder.com/180'">
+                <div>
+                    <h1>Hola, soy <span>MIRANDA</span></h1>
+                    <p class="subtitulo">Estudiante de Sistemas Informáticos</p>
+                    <p>Bienvenido a mi portafolio personal. Aquí muestro mis conocimientos, habilidades y proyectos realizados durante mi formación.</p>
+                    <a href="#proyectos" class="btn">Ver mis proyectos</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== HABILIDADES ========== -->
+    <section id="habilidades" class="habilidades">
+        <div class="container">
+            <h2>Formación y Habilidades</h2>
+            
+            <div class="grid-habilidades">
+                <div class="card">
+                    <h3>Formación</h3>
+                    <ul>
+                        <li>Técnico Medio en Sistemas Informáticos</li>
+                        <li>Módulo 17 - Diseño de Páginas Web</li>
+                        <li>HTML, CSS y JavaScript</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>Habilidades</h3>
+                    <ul>
+                        <li>HTML5 y CSS3</li>
+                        <li>JavaScript básico</li>
+                        <li>Diseño responsivo</li>
+                        <li>Git y GitHub</li>
+                        <li>Excel / VBA</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>Conocimientos</h3>
+                    <ul>
+                        <li>Redes informáticas</li>
+                        <li>Ofimática avanzada</li>
+                        <li>Diseño gráfico básico</li>
+                        <li>Resolución de problemas</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== PROYECTOS ========== -->
+    <section id="proyectos" class="proyectos">
+        <div class="container">
+            <h2>Mis Proyectos</h2>
+            
+            <div class="grid-proyectos">
+                <!-- Proyecto 1 -->
+                <article class="proyecto">
+                    <img src="img/website-configurator-theme-02.webp" alt="Proyecto 1" onerror="this.src='https://via.placeholder.com/400x220?text=Proyecto+1'">
+                    <div class="proyecto-info">
+                        <h3>Página Web HTML/CSS</h3>
+                        <p>Sitio web estático creado con HTML y CSS puro, con diseño adaptativo.</p>
+                        <span class="tech">HTML • CSS</span>
+                    </div>
+                </article>
+
+                <!-- Proyecto 2 -->
+                <article class="proyecto">
+                    <img src="img/calculator.webp" alt="Proyecto 2" onerror="this.src='https://via.placeholder.com/400x220?text=Proyecto+2'">
+                    <div class="proyecto-info">
+                        <h3>Calculadora JavaScript</h3>
+                        <p>Calculadora funcional desarrollada con HTML, CSS y JavaScript.</p>
+                        <span class="tech">HTML • CSS • JavaScript</span>
+                    </div>
+                </article>
+
+                <!-- Proyecto 3 -->
+                <article class="proyecto">
+                    <img src="img/excel-avanzado-macros-vba.webp" alt="Proyecto 3" onerror="this.src='https://via.placeholder.com/400x220?text=Proyecto+3'">
+                    <div class="proyecto-info">
+                        <h3>Automatización Excel VBA</h3>
+                        <p>Macros y formularios automatizados para gestión de datos en Excel.</p>
+                        <span class="tech">Excel • VBA</span>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CONTACTO ========== -->
+    <section id="contacto" class="contacto">
+        <div class="container">
+            <h2>Contacto</h2>
+            
+            <div class="contacto-contenido">
+                <div class="info-contacto">
+                    <p><strong>Email:</strong> dannaraquin123@gmail.com</p>
+                    <p><strong>Teléfono:</strong> +519 77727994</p>
+                    <p><strong>Ubicación:</strong> Bolivia</p>
+                </div>
+
+                <form id="formContacto" class="formulario">
+                    <input type="text" id="nombre" placeholder="Tu nombre" required>
+                    <input type="email" id="email" placeholder="Tu correo" required>
+                    <textarea id="mensaje" rows="4" placeholder="Escribe tu mensaje..." required></textarea>
+                    <button type="submit" class="btn">Enviar mensaje</button>
+                    <p id="mensajeForm" class="mensaje-form"></p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer>
+        <div class="container">
+            <p>© <span id="anio"></span> - Portafolio personal | Sistemas Informáticos</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,402 @@
+/* ========== RESET Y VARIABLES ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-principal: #e879a9;       /* Rosa suave */
+    --color-secundario: #c084fc;      /* Lila */
+    --color-texto: #4a3f55;
+    --color-fondo: #fdf6f9;           /* Fondo rosado muy claro */
+    --color-card: #ffffff;
+    --sombra: 0 8px 25px rgba(232, 121, 169, 0.12);
+    --borde-suave: 16px;
+}
+
+body.oscuro {
+    --color-principal: #f0a6c8;
+    --color-secundario: #d8b4fe;
+    --color-texto: #f3e8ff;
+    --color-fondo: #1e1330;
+    --color-card: #2a1f3d;
+    --sombra: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background: var(--color-fondo);
+    color: var(--color-texto);
+    line-height: 1.7;
+    transition: background 0.3s, color 0.3s;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ========== HEADER ========== */
+header {
+    background: var(--color-card);
+    box-shadow: var(--sombra);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 72px;
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 1.4rem;
+    color: var(--color-principal);
+    text-decoration: none;
+    letter-spacing: 0.5px;
+}
+
+.nav {
+    display: flex;
+    gap: 30px;
+}
+
+.nav a {
+    text-decoration: none;
+    color: var(--color-texto);
+    font-weight: 500;
+    font-size: 0.98rem;
+    transition: color 0.25s;
+    position: relative;
+}
+
+.nav a:hover {
+    color: var(--color-principal);
+}
+
+.nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--color-principal);
+    transition: width 0.25s;
+    border-radius: 2px;
+}
+
+.nav a:hover::after {
+    width: 100%;
+}
+
+.btn-modo {
+    background: none;
+    border: none;
+    font-size: 1.35rem;
+    cursor: pointer;
+    margin-left: 18px;
+    transition: transform 0.2s;
+}
+
+.btn-modo:hover {
+    transform: scale(1.15);
+}
+
+.menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.7rem;
+    cursor: pointer;
+    color: var(--color-texto);
+}
+
+/* ========== SECCIONES ========== */
+section {
+    padding: 80px 0;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 45px;
+    color: var(--color-texto);
+    position: relative;
+}
+
+h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(to right, var(--color-principal), var(--color-secundario));
+    margin: 12px auto 0;
+    border-radius: 3px;
+}
+
+/* ========== INICIO ========== */
+.inicio-contenido {
+    display: flex;
+    align-items: center;
+    gap: 55px;
+}
+
+.foto-perfil {
+    width: 190px;
+    height: 190px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 6px solid transparent;
+    background: linear-gradient(white, white) padding-box,
+                linear-gradient(135deg, var(--color-principal), var(--color-secundario)) border-box;
+    box-shadow: 0 10px 30px rgba(232, 121, 169, 0.25);
+}
+
+.inicio h1 {
+    font-size: 2.4rem;
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+.inicio h1 span {
+    background: linear-gradient(to right, var(--color-principal), var(--color-secundario));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.subtitulo {
+    color: var(--color-principal);
+    font-weight: 600;
+    font-size: 1.15rem;
+    margin-bottom: 18px;
+}
+
+.btn {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--color-principal), var(--color-secundario));
+    color: white;
+    padding: 14px 32px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    margin-top: 22px;
+    transition: transform 0.25s, box-shadow 0.25s;
+    box-shadow: 0 6px 18px rgba(232, 121, 169, 0.3);
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(232, 121, 169, 0.4);
+}
+
+/* ========== HABILIDADES ========== */
+.grid-habilidades {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 28px;
+}
+
+.card {
+    background: var(--color-card);
+    padding: 32px;
+    border-radius: var(--borde-suave);
+    box-shadow: var(--sombra);
+    transition: transform 0.25s;
+    border: 1px solid rgba(232, 121, 169, 0.1);
+}
+
+.card:hover {
+    transform: translateY(-6px);
+}
+
+.card h3 {
+    color: var(--color-principal);
+    margin-bottom: 18px;
+    font-size: 1.25rem;
+}
+
+.card ul {
+    list-style: none;
+}
+
+.card li {
+    padding: 9px 0;
+    border-bottom: 1px solid rgba(232, 121, 169, 0.12);
+    position: relative;
+    padding-left: 18px;
+}
+
+.card li::before {
+    content: '•';
+    color: var(--color-principal);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+body.oscuro .card li {
+    border-bottom-color: rgba(240, 166, 200, 0.15);
+}
+
+/* ========== PROYECTOS ========== */
+.grid-proyectos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 32px;
+}
+
+.proyecto {
+    background: var(--color-card);
+    border-radius: var(--borde-suave);
+    overflow: hidden;
+    box-shadow: var(--sombra);
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid rgba(232, 121, 169, 0.1);
+}
+
+.proyecto:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(232, 121, 169, 0.2);
+}
+
+.proyecto img {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+}
+
+.proyecto-info {
+    padding: 24px;
+}
+
+.proyecto-info h3 {
+    margin-bottom: 10px;
+    color: var(--color-texto);
+}
+
+.tech {
+    display: inline-block;
+    margin-top: 14px;
+    font-size: 0.85rem;
+    color: white;
+    background: linear-gradient(135deg, var(--color-principal), var(--color-secundario));
+    padding: 5px 14px;
+    border-radius: 50px;
+    font-weight: 500;
+}
+
+/* ========== CONTACTO ========== */
+.contacto-contenido {
+    display: grid;
+    grid-template-columns: 1fr 1.6fr;
+    gap: 45px;
+    align-items: start;
+}
+
+.info-contacto p {
+    margin-bottom: 14px;
+    font-size: 1.08rem;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.formulario input,
+.formulario textarea {
+    padding: 15px 18px;
+    border: 1.5px solid rgba(232, 121, 169, 0.25);
+    border-radius: 12px;
+    font-size: 1rem;
+    background: var(--color-card);
+    color: var(--color-texto);
+    transition: border-color 0.25s, box-shadow 0.25s;
+}
+
+.formulario input:focus,
+.formulario textarea:focus {
+    outline: none;
+    border-color: var(--color-principal);
+    box-shadow: 0 0 0 4px rgba(232, 121, 169, 0.15);
+}
+
+body.oscuro .formulario input,
+body.oscuro .formulario textarea {
+    border-color: rgba(240, 166, 200, 0.3);
+}
+
+.mensaje-form {
+    margin-top: 8px;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.mensaje-form.exito {
+    color: #16a34a;
+}
+
+.mensaje-form.error {
+    color: #e11d48;
+}
+
+/* ========== FOOTER ========== */
+footer {
+    background: var(--color-card);
+    text-align: center;
+    padding: 28px 0;
+    margin-top: 20px;
+    font-size: 0.95rem;
+    color: var(--color-texto);
+    border-top: 1px solid rgba(232, 121, 169, 0.1);
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+    .menu-btn {
+        display: block;
+    }
+
+    .nav {
+        position: absolute;
+        top: 72px;
+        left: 0;
+        right: 0;
+        background: var(--color-card);
+        flex-direction: column;
+        padding: 22px;
+        gap: 16px;
+        box-shadow: var(--sombra);
+        display: none;
+        border-radius: 0 0 16px 16px;
+    }
+
+    .nav.activo {
+        display: flex;
+    }
+
+    .inicio-contenido {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .inicio h1 {
+        font-size: 1.9rem;
+    }
+
+    .contacto-contenido {
+        grid-template-columns: 1fr;
+    }
+}
